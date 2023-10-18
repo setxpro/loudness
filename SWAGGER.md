@@ -1,37 +1,56 @@
-Define o Caminho para a Documentação do OpenAPI no formato JSON.
+# SWAGGER DOCUMENTATION
+
+#### Define o Caminho para a Documentação do OpenAPI no formato JSON.
+````properties
+    springdoc.api-docs.path=/v3/api-docs
+````
 ---
-springdoc.api-docs.path=/v3/api-docs
 
-Define o Caminho para a Documentação do Swagger-ui no formato HTML.
+#### Define o Caminho para a Documentação do Swagger-ui no formato HTML.
+
+````properties
+    springdoc.swagger-ui.path=/swagger-ui.html
+````
 ---
-springdoc.swagger-ui.path=/swagger-ui.html
 
-Define a ordem em que os Recursos serão exibidos no Swagger-ui.
+#### Define a ordem em que os Recursos serão exibidos no Swagger-ui.
+    
+````properties
+    springdoc.swagger-ui.operations-sorter=method
+````
 ---
-springdoc.swagger-ui.operations-sorter=method
+#### Desabilita a URL padrão do Swagger-ui (Exemplo no site do Swagger).
 
-Desabilita a URL padrão do Swagger-ui (Exemplo no site do Swagger).
+````properties
+    springdoc.swagger-ui.disable-swagger-default-url=true
+````
 ---
-springdoc.swagger-ui.disable-swagger-default-url=true
 
-Define o nome da Package da Camada Controladora (Controller).
+
+#### Define o nome da Package da Camada Controladora (Controller).
+
+````properties
+    springdoc.packages-to-scan=br.com.loudness.ecommerce.controllers
+````
+
 ---
-springdoc.packages-to-scan=br.com.loudness.ecommerce.controllers
 
-Define o Swagger-ui como a página inicial da aplicação
+#### Define o Swagger-ui como a página inicial da aplicação
+````properties
+    springdoc.swagger-ui.use-root-path=true 
+````
 ---
-springdoc.swagger-ui.use-root-path=true
 
+## AFTER THE APPLICATION HAS BEEN RUN
 
-FORMAT JSON
+GET FORMAT JSON
 --
-http://localhost:8080/v3/api-docs
+<a href="http://localhost:8080/v3/api-docs">ACCESS FORMAT JSON</a>
 
-CTRL+C -> FORMAT JSON
-
-SWAGGER
+GO TO SWAGGER
 --
-https://editor.swagger.io/
+<a href="https://editor.swagger.io/">ACCESS SWAGGER EDITION</a>
 
-CTRL+V -> TO SWAGGER EDITION
+
+
 
