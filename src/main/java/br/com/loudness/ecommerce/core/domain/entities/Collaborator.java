@@ -3,6 +3,7 @@ package br.com.loudness.ecommerce.core.domain.entities;
 import br.com.loudness.ecommerce.core.domain.dtos.collaborator.CollaboratorDto;
 import br.com.loudness.ecommerce.core.domain.enums.GenderEnum;
 import br.com.loudness.ecommerce.core.domain.enums.UserRole;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;
@@ -30,6 +31,7 @@ public class Collaborator implements UserDetails {
     private String name;
     private String middlename;
     @Email
+    @Schema(example = "email@email.com.br")
     private String email;
     private String login;
     private String password;
