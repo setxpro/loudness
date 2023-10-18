@@ -1,8 +1,7 @@
 package br.com.loudness.ecommerce.infra.security;
 
 import br.com.loudness.ecommerce.core.domain.repositories.CollaboratorRepository;
-import br.com.loudness.ecommerce.core.domain.repositories.CustomerRepository;
-import br.com.loudness.ecommerce.services.TokenCustomerService;
+import br.com.loudness.ecommerce.services.TokenService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -20,7 +19,7 @@ import java.io.IOException;
 public class SecurityFilter extends OncePerRequestFilter {
 
     @Autowired
-    TokenCustomerService tokenCustomerService;
+    TokenService tokenService;
 
     @Autowired
     CollaboratorRepository collaboratorRepository;
@@ -32,7 +31,7 @@ public class SecurityFilter extends OncePerRequestFilter {
         // have token
         if(token != null) {
             // Validation
-            var login = tokenCustomerService.validateToken(token);
+            var login = tokenService.validateToken(token);
             UserDetails user = collaboratorRepository.findByLogin(login);
 
             // verifications of the user
