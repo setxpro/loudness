@@ -1,7 +1,9 @@
 package br.com.loudness.ecommerce.infra.security;
 
+import br.com.loudness.ecommerce.core.domain.dtos.messages.ErrorDto;
 import br.com.loudness.ecommerce.core.domain.repositories.CollaboratorRepository;
 import br.com.loudness.ecommerce.services.TokenService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -39,6 +41,16 @@ public class SecurityFilter extends OncePerRequestFilter {
 
             // Save token in context
             SecurityContextHolder.getContext().setAuthentication(authentication);
+        } else {
+            ErrorDto error = new ErrorDto(401, "Access denied");
+
+            response.setStatus(error.getStatus());
+            response.setContentType("application/json");
+            ObjectMapper mapper = new ObjectMapper();
+
+            response.getWriter().print(mapper.writeValueAsString(error));
+            response.getWriter().flush();
+            return;
         }
 
         // token is null ?  next filter
