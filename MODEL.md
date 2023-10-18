@@ -4,6 +4,21 @@
 
 <a href="https://app.quickdatabasediagrams.com/#/">Draw database diagram</a>
 
+
+collaborator
+---
+name
+middlename
+email
+login
+password
+phonenumber
+dateOfBith
+admissionDate
+endDate
+role
+gender
+
 customer
 ---
 customerId int pk autoincrement FK >- order.customerId
@@ -97,3 +112,7 @@ title string
 <a href="https://business.instagram.com/shopping/?locale=pt_BR&content_id=JcW10T9nPnHQa66&ref=sem_smb&utm_term=dsa-1878220727685&gclid=Cj0KCQjw4bipBhCyARIsAFsieCwRBX8aVu3jSY3PKYM1mGGV83QaXmQdL7G4t-98kTuMZ570EIBZuNMaAvnSEALw_wcB">Instagram</a>
 
 ## Documentation
+
+
+
+
